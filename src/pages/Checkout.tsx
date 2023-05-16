@@ -31,12 +31,12 @@ export default function Checkout() {
                     // print node order line by line
                     traverse(val.nodes, val.edges).map((node: any) => {
                         return (
-                            <div>
+                            <div key={node.id}>
                                 <div style={{ border: 'solid 1px', width: 'fit-content', marginLeft: 'auto', marginRight: 'auto', padding: 20, marginBottom: 20 }}>
                                     <div>
                                         <img src={node.data.icon} alt={node.name} style={{ width: 30 }} />
                                     </div>
-                                    <div>
+                                    <div key={node.id}>
                                         <h3>
                                             {node.name}
                                         </h3>
@@ -58,7 +58,7 @@ export default function Checkout() {
                                             // print values of each object line by line
                                             node.data.formData.map((obj: any) => {
                                                 return (
-                                                    <div>
+                                                    <div key={obj.id}>
                                                         <pre>
                                                             {JSON.stringify(obj, null, 2)}
                                                         </pre>
